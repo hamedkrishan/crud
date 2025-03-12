@@ -1,6 +1,6 @@
 <h1> Add New Student </h1>
 
-<form action="{{route('')}}" method="POST">
+<form action="{{route('oranges.store')}}" method="POST">
     @csrf
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" ><br><br>

@@ -22,7 +22,7 @@ class OrangeController extends Controller
      */
     public function create()
     {
-        
+        return view("oranges.create");
     }
 
     /**
@@ -30,7 +30,13 @@ class OrangeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hamed = new Orange();
+        $hamed ->name = $request->name;
+        $hamed ->email = $request->email;
+        $hamed ->save();
+        return redirect()->route('oranges.index');
+
+
     }
 
     /**
@@ -44,9 +50,10 @@ class OrangeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Orange $orange)
+    public function edit($id)
     {
-        //
+        $hamed = orange::findorFail($id);
+        return view('oranges.edit', compact('hamed'));
     }
 
     /**

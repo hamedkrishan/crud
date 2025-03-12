@@ -1,12 +1,11 @@
 <h1>Show All Students</h1>
-
-<table>
+<button><a href="{{ route('oranges.create') }}">Add New</a></button>
     <thead>
         <tr>
             <th>#</th>  
             <th>Name</th>  
-            <th>Email</th>  
-            <th>Action</th>  
+            <th>email</th>  
+            <th>Age</th>  
         </tr>
     </thead>
     <tbody>
