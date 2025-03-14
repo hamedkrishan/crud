@@ -59,16 +59,22 @@ class OrangeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Orange $orange)
+    public function update(Request $request, $id)
     {
-        //
-    }
+         $student = orange::findOrFail($id);
 
+    $student->name = $request->name;
+    $student->email = $request->email;
+    $student->save();
+
+    return redirect()->route('oranges.index');
+    }
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Orange $orange)
+    public function destroy($id)
     {
-        //
+        orange::destroy($id);
+        return redirect()->route('oranges.index');
     }
 }
